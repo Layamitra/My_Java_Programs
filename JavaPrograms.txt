@@ -1,0 +1,258 @@
+//Program to find whether a number is postive,negative or zero
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Check
+{
+public static void main(String args[])throws IOException
+{
+System.out.println("Enter the integer");
+String num;
+int no;
+DataInputStream ds=new DataInputStream(System.in);
+num=ds.readLine();
+no=Integer.parseInt(num);
+if(no>0)
+System.out.println("The number is positive");
+else if(no<0)
+System.out.println("The number is negative");
+else
+System.out.println("The number is zero");
+}
+}
+
+//Program to find perimeter and area of a circle
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Circle
+{
+public static void main(String args[]) throws IOException
+{
+System.out.println("Enter the radius");
+DataInputStream ds=new DataInputStream(System.in);
+String rad;
+rad=ds.readLine();
+Double r;
+r=Double.parseDouble(rad);
+Double area,per;
+per=2*Math.PI*r;
+area=Math.PI*r*r;
+System.out.println("The perimeter is"+per);
+System.out.println("The area is"+area);
+}
+}
+
+//Program to convert inches to metres
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Convert
+{
+public static void main(String args[])throws IOException
+{
+DataInputStream ds=new DataInputStream(System.in);
+System.out.println("Enter the value in inches");
+String inc;
+inc=ds.readLine();
+Double in;
+in=Double.parseDouble(inc);
+Double mts;
+mts=in*0.0254;
+System.out.println("The value in metres is"+mts);
+}
+}
+
+
+//Program to count the number of vowels in a word
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Count
+{
+public static void main(String args[])throws IOException
+{
+DataInputStream ds=new DataInputStream(System.in);
+String s;
+s=ds.readLine();
+int i,count=0;
+for(i=0;i<s.length();i++)
+	{
+	if(s.charAt(i)=='a'||s.charAt(i)=='e'||s.charAt(i)=='i'||s.charAt(i)=='o'||s.charAt(i)=='u')
+		{
+		count++;
+		}
+	}
+System.out.println("The number of vowels in "+s+" is "+count);
+}
+}
+
+
+//Program to find the cube of a number
+import java.util.*;
+import java.io.*;
+class Cube
+{
+public static void main(String args[])throws IOException
+{
+String s1;
+int num;
+DataInputStream ds=new DataInputStream(System.in);
+System.out.println("Enter the number");
+s1=ds.readLine();
+num=Integer.parseInt(s1);
+int i;
+for(i=1;i<=num;i++)
+	{
+	System.out.println("The number is "+i+"and its cube is "+(i*i*i));
+	}
+}
+}
+
+
+//Program to find the sum of two matrices
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Mat
+{
+public static void main(String args[])throws IOException
+{
+DataInputStream ds=new DataInputStream(System.in);
+System.out.println("Enter the number of rows and columns of the matrices");
+String row,col;
+row=ds.readLine();
+col=ds.readLine();
+int r,c;
+int i,j;
+r=Integer.parseInt(row);
+c=Integer.parseInt(col);
+int mat3[][]=new int[r][c];
+int mat1[][]=new int[r][c];
+int mat2[][]=new int[r][c];
+String s1[][]=new String[r][c];
+String s2[][]=new String[r][c];
+System.out.println("Enter the first matrix");
+for(i=0;i<r;i++)
+	{
+	for(j=0;j<c;j++)
+		{
+		s1[i][j]=ds.readLine();
+		mat1[i][j]=Integer.parseInt(s1[i][j]);
+		}
+	}
+System.out.println("Enter the second matrix");
+for(i=0;i<r;i++)
+	{
+	for(j=0;j<c;j++)
+		{
+		s2[i][j]=ds.readLine();
+		mat2[i][j]=Integer.parseInt(s2[i][j]);
+		}
+	}
+for(i=0;i<r;i++)
+	{
+	for(j=0;j<c;j++)
+		{
+		mat3[i][j]=mat1[i][j]+mat2[i][j];
+		}
+	}
+System.out.println("The sum of the matrices is");
+for(i=0;i<r;i++)
+	{
+	for(j=0;j<c;j++)
+		{
+		System.out.print(mat3[i][j]+"\t");
+		}
+	System.out.println();
+	}
+}
+}
+
+
+//Program to convert the given minutes into years and minutes
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Min
+{
+public static void main(String args[])throws IOException
+{
+DataInputStream ds=new DataInputStream(System.in);
+String minutes;
+System.out.println("Enter the value in minutes");
+minutes=ds.readLine();
+int min;
+min=Integer.parseInt(minutes);
+int year,day;
+year=0;
+day=min/1440;
+while(day>=365)
+	{
+	day=day-365;
+	year=year+1;
+	}
+int temp=year;
+while(temp!=0)
+	{
+	day=day-1;
+	temp=temp-4;
+	}
+System.out.println(min+"minutes is approximately equal to"+year+"years"+day+"days");
+}
+}
+
+//Program to find the smallest of three numbers
+import java.util.*;
+import java.io.*;
+class Small
+{
+public static void main(String args[])throws IOException
+{
+String s1,s2,s3;
+int num1,num2,num3;
+DataInputStream ds=new DataInputStream(System.in);
+System.out.println("Enter the first number");
+s1=ds.readLine();
+System.out.println("Enter the second number");
+s2=ds.readLine();
+System.out.println("Enter the third number");
+s3=ds.readLine();
+num1=Integer.parseInt(s1);
+num2=Integer.parseInt(s2);
+num3=Integer.parseInt(s3);
+if((num1<num2)&&(num1<num3))
+System.out.println(num1+" is small");
+else if((num2<num3)&&(num2<num1))
+System.out.println(num2+" is small");
+else
+System.out.println(num3+" is small");
+}
+}
+
+
+//Program to find the sum of digits of a integer
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Sum
+{
+public static void main(String args[])throws IOException
+{
+DataInputStream ds=new DataInputStream(System.in);
+System.out.println("Enter the integer");
+String num;
+num=ds.readLine();
+int no;
+no=Integer.parseInt(num);
+int temp,sum=0;
+while(no!=0)
+	{
+	temp=no%10;
+	no=no/10;
+	sum+=temp;
+	}
+System.out.println("The sum of digits of the integer is"+sum);
+}
+}
+
